@@ -1,0 +1,32 @@
+#!/bin/sh
+
+echo ".:: YasTech ::."
+echo "Shadowsocks R Client Ubunut"
+
+echo "!! Use 'connect' & 'disconnect' commands to connect or disconned ssr"
+echo "!! Use 'exit' command to close program!"
+
+while true 
+do
+      echo ""
+      echo -n "ssr> "
+
+      read com
+
+      case $com in
+        connect)
+          echo "connecting..."
+          sudo /opt/ssr-ubuntu/connect.sh
+          echo "connected!"
+        ;;
+        disconnect)
+          echo "disconnecting..."
+          sudo /opt/ssr-ubuntu/disconnect.sh
+          echo "disconnected!"
+        ;;
+        exit)
+          sudo /opt/ssr-ubuntu/disconnect.sh
+          exit
+        ;;
+      esac
+done

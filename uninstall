@@ -1,0 +1,21 @@
+#!/bin/sh
+
+echo ".:: YasTech ::."
+echo "developer: Hossein Araghi"
+echo "version: 1.0.0"
+echo "== Shadowsocks R Client Ubuntu =="
+
+echo "ssr> removing program..."
+
+sudo iptables -t nat -F REDSOCKS
+
+killall ssr-client
+
+sudo apt-get -y autoremove --purge redsocks
+
+sudo rm -rf /opt/ssr-ubuntu
+sudo rm -rf /usr/share/applications/ssr.desktop
+
+echo "ssr> done!"
+echo "ssr> type 'Enter' to close program..."
+read close

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=SSR
+Type=Application
+Comment=Shadowsocks R Ubuntu
+Terminal=true
+Exec=/opt/ssr-ubuntu/run
+Icon=htop
+Categories=ConsoleOnly;Utility;
+Keywords=matrix;

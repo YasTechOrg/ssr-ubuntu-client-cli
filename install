@@ -1,0 +1,30 @@
+#!/bin/sh
+
+echo ".:: YasTech ::."
+echo "developer: Hossein Araghi"
+echo "version: 1.0.0"
+echo "== Shadowsocks R Client Ubuntu =="
+
+echo "ssr> installing updates..."
+
+sudo apt-get update -y
+
+echo "ssr> installing dependencies..."
+
+sudo apt-get install -y redsocks
+sudo apt-get install iptables
+
+echo "ssr> create executable files..."
+
+sudo cp -r ./ssr-ubuntu/ /opt/ssr-ubuntu/
+sudo cp ./ssr-ubuntu/ssr.desktop /usr/share/applications/
+
+echo "ssr> grant executable files access..."
+sudo chmod +x /opt/ssr-ubuntu/connect.sh
+sudo chmod +x /opt/ssr-ubuntu/disconnect.sh
+sudo chmod +x /opt/ssr-ubuntu/run
+sudo chmod +x /opt/ssr-ubuntu/ssr-client
+
+echo "ssr> done!"
+echo "ssr> type 'Enter' to close program..."
+read close
